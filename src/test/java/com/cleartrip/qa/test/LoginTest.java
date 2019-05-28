@@ -2,6 +2,8 @@ package com.cleartrip.qa.test;
 
 
 
+import java.io.FileNotFoundException;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -18,15 +20,20 @@ public class LoginTest extends Base{
 	HomePage homePage;
 	
 	
-	public LoginTest() {		
+	public LoginTest() throws FileNotFoundException {		
 		super();
 	}
 	
 	
 	@BeforeMethod
-	public void setUp() throws Exception {
+	public void setUp() {
+			try {
+				initialization();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		
-		initialization();
 		loginPage = new LoginPage();
 		
 		 

@@ -6,6 +6,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.cleartrip.baseclass.Base;
 
-public class Register extends Base{
+public class Register{
 	
 }

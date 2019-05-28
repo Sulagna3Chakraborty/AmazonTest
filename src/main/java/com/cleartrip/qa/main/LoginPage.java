@@ -29,7 +29,7 @@ public class LoginPage extends Base{
 	@FindBy(id="password")
 	WebElement password;
 	
-	@FindBy(className ="social icon32 connect fb")
+	@FindBy(className ="social.icon32.connect fb")
 	WebElement facebook;
 	
 	
@@ -47,13 +47,11 @@ public class LoginPage extends Base{
 public HomePage signIn(String un, String pw) {
 	signinDrop.click();
 	signinButton1.click();
-	//robot.keyPress(KeyEvent.VK_TAB);
-	//robot.keyPress(KeyEvent.VK_ENTER);
+	driver.switchTo().frame("modal_window");
 	username.sendKeys(un);
 	password.sendKeys(pw);
 	signinButton2.click();
 	
-	facebook.click();
 	
 	return new HomePage();
 	
